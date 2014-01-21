@@ -45,7 +45,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         // Configure logging framework
         [DDLog addLogger:[DDTTYLogger sharedInstance]];
         //configure JID
-        JID=@"haitt22@hieu-pc";
+        JID=@"hieutt16@hieu-pc";
         // Setup the XMPP stream
         [self setupStream];
         //Connect Openfire Server

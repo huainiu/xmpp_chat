@@ -37,7 +37,7 @@
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addConversation)];
     self.navigationItem.rightBarButtonItem = addItem;
     //
-    self.title=@"User: haitt22";
+    self.title=@"User: hieutt16";
     //delegate
     OpenSnowXMPPParser *parser=[OpenSnowXMPPParser sharedInstance];
     parser.listDelagate=self;
@@ -55,8 +55,11 @@
     [alert showWithHandler:^(UIAlertView *alertView, NSInteger buttonIndex) {
         if (buttonIndex==1) {
             NSString *inputText=[alertView textFieldAtIndex:0].text;
-            [_listConversation addObject:inputText];
+            PersonEntity *entity=[[PersonEntity alloc] initWithJID:inputText newMessage:0];
+            [_listConversation addObject:entity];
             [_tableView reloadData];
+            ChatController *chat=[[ChatController alloc] initWithPerson:entity message:[NSMutableArray array]];
+            [self.navigationController pushViewController:chat animated:YES];
         }
     }];
     

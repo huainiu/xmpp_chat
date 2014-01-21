@@ -102,9 +102,11 @@
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_listMessage.count-1 inSection:0]]  withRowAnimation:UITableViewRowAnimationTop];
         [self.tableView endUpdates];
         [self scrollToBottomAnimated:YES];
-        
+    } else {
+        NSLog(@"Co loi ket noi");
     }
-   
+    self.messageInputView.textView.text=@"";
+    
 }
 - (UIImageView *)bubbleImageViewWithType:(JSBubbleMessageType)type
                        forRowAtIndexPath:(NSIndexPath *)indexPath {
