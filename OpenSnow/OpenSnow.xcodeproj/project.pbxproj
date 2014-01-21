@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4300BF5188E1D610097BB1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4300BF4188E1D610097BB1E /* Foundation.framework */; };
+		D4300BF7188E1D610097BB1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4300BF6188E1D610097BB1E /* CoreGraphics.framework */; };
+		D4300BF9188E1D610097BB1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4300BF8188E1D610097BB1E /* UIKit.framework */; };
+		D4300BFF188E1D610097BB1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4300BFD188E1D610097BB1E /* InfoPlist.strings */; };
+		D4300C01188E1D610097BB1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300C00188E1D610097BB1E /* main.m */; };
+		D4300C05188E1D610097BB1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300C04188E1D610097BB1E /* AppDelegate.m */; };
+		D4300C07188E1D610097BB1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4300C06188E1D610097BB1E /* Images.xcassets */; };
+		D4300C0E188E1D610097BB1E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4300C0D188E1D610097BB1E /* XCTest.framework */; };
+		D4300C0F188E1D610097BB1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4300BF4188E1D610097BB1E /* Foundation.framework */; };
+		D4300C10188E1D610097BB1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4300BF8188E1D610097BB1E /* UIKit.framework */; };
+		D4300C18188E1D610097BB1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4300C16188E1D610097BB1E /* InfoPlist.strings */; };
+		D4300C1A188E1D610097BB1E /* OpenSnowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300C19188E1D610097BB1E /* OpenSnowTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4300C11188E1D610097BB1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4300BE9188E1D610097BB1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4300BF0188E1D610097BB1E;
+			remoteInfo = OpenSnow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4300BF1188E1D610097BB1E /* OpenSnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4300BF4188E1D610097BB1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4300BF6188E1D610097BB1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D4300BF8188E1D610097BB1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D4300BFC188E1D610097BB1E /* OpenSnow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenSnow-Info.plist"; sourceTree = "<group>"; };
+		D4300BFE188E1D610097BB1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4300C00188E1D610097BB1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4300C02188E1D610097BB1E /* OpenSnow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenSnow-Prefix.pch"; sourceTree = "<group>"; };
+		D4300C03188E1D610097BB1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D4300C04188E1D610097BB1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D4300C06188E1D610097BB1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4300C0C188E1D610097BB1E /* OpenSnowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSnowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4300C0D188E1D610097BB1E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D4300C15188E1D610097BB1E /* OpenSnowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenSnowTests-Info.plist"; sourceTree = "<group>"; };
+		D4300C17188E1D610097BB1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4300C19188E1D610097BB1E /* OpenSnowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSnowTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4300BEE188E1D610097BB1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4300BF7188E1D610097BB1E /* CoreGraphics.framework in Frameworks */,
+				D4300BF9188E1D610097BB1E /* UIKit.framework in Frameworks */,
+				D4300BF5188E1D610097BB1E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4300C09188E1D610097BB1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4300C0E188E1D610097BB1E /* XCTest.framework in Frameworks */,
+				D4300C10188E1D610097BB1E /* UIKit.framework in Frameworks */,
+				D4300C0F188E1D610097BB1E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4300BE8188E1D610097BB1E = {
+			isa = PBXGroup;
+			children = (
+				D4300BFA188E1D610097BB1E /* OpenSnow */,
+				D4300C13188E1D610097BB1E /* OpenSnowTests */,
+				D4300BF3188E1D610097BB1E /* Frameworks */,
+				D4300BF2188E1D610097BB1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4300BF2188E1D610097BB1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4300BF1188E1D610097BB1E /* OpenSnow.app */,
+				D4300C0C188E1D610097BB1E /* OpenSnowTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4300BF3188E1D610097BB1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4300BF4188E1D610097BB1E /* Foundation.framework */,
+				D4300BF6188E1D610097BB1E /* CoreGraphics.framework */,
+				D4300BF8188E1D610097BB1E /* UIKit.framework */,
+				D4300C0D188E1D610097BB1E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4300BFA188E1D610097BB1E /* OpenSnow */ = {
+			isa = PBXGroup;
+			children = (
+				D4300C03188E1D610097BB1E /* AppDelegate.h */,
+				D4300C04188E1D610097BB1E /* AppDelegate.m */,
+				D4300C06188E1D610097BB1E /* Images.xcassets */,
+				D4300BFB188E1D610097BB1E /* Supporting Files */,
+			);
+			path = OpenSnow;
+			sourceTree = "<group>";
+		};
+		D4300BFB188E1D610097BB1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4300BFC188E1D610097BB1E /* OpenSnow-Info.plist */,
+				D4300BFD188E1D610097BB1E /* InfoPlist.strings */,
+				D4300C00188E1D610097BB1E /* main.m */,
+				D4300C02188E1D610097BB1E /* OpenSnow-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4300C13188E1D610097BB1E /* OpenSnowTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4300C19188E1D610097BB1E /* OpenSnowTests.m */,
+				D4300C14188E1D610097BB1E /* Supporting Files */,
+			);
+			path = OpenSnowTests;
+			sourceTree = "<group>";
+		};
+		D4300C14188E1D610097BB1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4300C15188E1D610097BB1E /* OpenSnowTests-Info.plist */,
+				D4300C16188E1D610097BB1E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4300BF0188E1D610097BB1E /* OpenSnow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4300C1D188E1D610097BB1E /* Build configuration list for PBXNativeTarget "OpenSnow" */;
+			buildPhases = (
+				D4300BED188E1D610097BB1E /* Sources */,
+				D4300BEE188E1D610097BB1E /* Frameworks */,
+				D4300BEF188E1D610097BB1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenSnow;
+			productName = OpenSnow;
+			productReference = D4300BF1188E1D610097BB1E /* OpenSnow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4300C0B188E1D610097BB1E /* OpenSnowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4300C20188E1D610097BB1E /* Build configuration list for PBXNativeTarget "OpenSnowTests" */;
+			buildPhases = (
+				D4300C08188E1D610097BB1E /* Sources */,
+				D4300C09188E1D610097BB1E /* Frameworks */,
+				D4300C0A188E1D610097BB1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4300C12188E1D610097BB1E /* PBXTargetDependency */,
+			);
+			name = OpenSnowTests;
+			productName = OpenSnowTests;
+			productReference = D4300C0C188E1D610097BB1E /* OpenSnowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4300BE9188E1D610097BB1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = KCQ_HIEUTT16;
+				TargetAttributes = {
+					D4300C0B188E1D610097BB1E = {
+						TestTargetID = D4300BF0188E1D610097BB1E;
+					};
+				};
+			};
+			buildConfigurationList = D4300BEC188E1D610097BB1E /* Build configuration list for PBXProject "OpenSnow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4300BE8188E1D610097BB1E;
+			productRefGroup = D4300BF2188E1D610097BB1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4300BF0188E1D610097BB1E /* OpenSnow */,
+				D4300C0B188E1D610097BB1E /* OpenSnowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4300BEF188E1D610097BB1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4300BFF188E1D610097BB1E /* InfoPlist.strings in Resources */,
+				D4300C07188E1D610097BB1E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4300C0A188E1D610097BB1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4300C18188E1D610097BB1E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4300BED188E1D610097BB1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4300C05188E1D610097BB1E /* AppDelegate.m in Sources */,
+				D4300C01188E1D610097BB1E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4300C08188E1D610097BB1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4300C1A188E1D610097BB1E /* OpenSnowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4300C12188E1D610097BB1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4300BF0188E1D610097BB1E /* OpenSnow */;
+			targetProxy = D4300C11188E1D610097BB1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4300BFD188E1D610097BB1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4300BFE188E1D610097BB1E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4300C16188E1D610097BB1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4300C17188E1D610097BB1E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4300C1B188E1D610097BB1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D4300C1C188E1D610097BB1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4300C1E188E1D610097BB1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSnow/OpenSnow-Prefix.pch";
+				INFOPLIST_FILE = "OpenSnow/OpenSnow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D4300C1F188E1D610097BB1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSnow/OpenSnow-Prefix.pch";
+				INFOPLIST_FILE = "OpenSnow/OpenSnow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4300C21188E1D610097BB1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenSnow.app/OpenSnow";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSnow/OpenSnow-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OpenSnowTests/OpenSnowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D4300C22188E1D610097BB1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenSnow.app/OpenSnow";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSnow/OpenSnow-Prefix.pch";
+				INFOPLIST_FILE = "OpenSnowTests/OpenSnowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4300BEC188E1D610097BB1E /* Build configuration list for PBXProject "OpenSnow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4300C1B188E1D610097BB1E /* Debug */,
+				D4300C1C188E1D610097BB1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4300C1D188E1D610097BB1E /* Build configuration list for PBXNativeTarget "OpenSnow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4300C1E188E1D610097BB1E /* Debug */,
+				D4300C1F188E1D610097BB1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4300C20188E1D610097BB1E /* Build configuration list for PBXNativeTarget "OpenSnowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4300C21188E1D610097BB1E /* Debug */,
+				D4300C22188E1D610097BB1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4300BE9188E1D610097BB1E /* Project object */;
+}
