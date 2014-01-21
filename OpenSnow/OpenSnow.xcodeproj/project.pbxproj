@@ -586,6 +586,7 @@
 		D4300E95188E5C960097BB1E /* PersonEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonEntity.m; sourceTree = "<group>"; };
 		D4300E97188E62600097BB1E /* OSXMPPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSXMPPMessage.h; sourceTree = "<group>"; };
 		D4300E98188E62600097BB1E /* OSXMPPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSXMPPMessage.m; sourceTree = "<group>"; };
+		D4300E9A188E6B8C0097BB1E /* ConservationDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConservationDetailDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +678,7 @@
 				D4300E95188E5C960097BB1E /* PersonEntity.m */,
 				D4300E97188E62600097BB1E /* OSXMPPMessage.h */,
 				D4300E98188E62600097BB1E /* OSXMPPMessage.m */,
+				D4300E9A188E6B8C0097BB1E /* ConservationDetailDelegate.h */,
 			);
 			path = OpenSnow;
 			sourceTree = "<group>";

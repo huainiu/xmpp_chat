@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 #import "XMPPFramework.h"
 #import "ListConservationDelegate.h"
+#import "ConservationDetailDelegate.h"
 @interface OpenSnowXMPPParser : NSObject <XMPPRosterDelegate> {
     NSString *JID;
 	NSString *password;
@@ -31,6 +32,7 @@
 @property (nonatomic, strong, readonly) XMPPCapabilities *xmppCapabilities;
 @property (nonatomic, strong, readonly) XMPPCapabilitiesCoreDataStorage *xmppCapabilitiesStorage;
 @property (nonatomic, weak) id<ListConservationDelegate> listDelagate;
+@property (nonatomic, weak) id<ConservationDetailDelegate> detailDelagate;
 
 - (NSManagedObjectContext *)managedObjectContext_roster;
 - (NSManagedObjectContext *)managedObjectContext_capabilities;

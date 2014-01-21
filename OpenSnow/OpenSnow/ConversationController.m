@@ -94,7 +94,7 @@
 
     
     for (OSXMPPMessage *item in _listRecvMessage) {
-        if ([person.JID isEqualToString:item.from.user])
+        if ([person.JID isEqualToString:item.message.from.user])
          [discardedItems addObject:item];
     }
     
@@ -104,22 +104,50 @@
 }
 #pragma mark - ListConservationDelegate
 - (void)didReceiveMessage:(OSXMPPMessage *)message {
-    [_listRecvMessage addObject:message];
-    NSString *sender=message.from.user;
-    BOOL exist=NO;
-    for (int i=0;i<_listConversation.count;i++) {
-        PersonEntity *person=_listConversation[i];
-        if ([person.JID isEqualToString:sender]) {
-            exist=YES;
-            person.numberOfMessage++;
-            [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-            break;
+    
+    NSString *sender=message.message.from.user;
+    //check navagation stack
+    UIViewController *topController=[self.navigationController.viewControllers lastObject];
+    
+    if ([topController isKindOfClass:[ChatController class]]) {
+        ChatController *chatController=(ChatController*)topController;
+        NSString *JID=chatController.chatWithJID.JID;
+        if ([JID isEqualToString:sender]) {
+            return;
         }
-    }
-    if (!exist) {
-        PersonEntity *person=[[PersonEntity alloc] initWithJID:sender newMessage:1];
-        [_listConversation addObject:person];
-        [_tableView reloadData];
+        [_listRecvMessage addObject:message];
+        BOOL exist=NO;
+        for (int i=0;i<_listConversation.count;i++) {
+            PersonEntity *person=_listConversation[i];
+            if ([person.JID isEqualToString:sender]) {
+                exist=YES;
+                person.numberOfMessage++;
+                [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                break;
+            }
+        }
+        if (!exist) {
+            PersonEntity *person=[[PersonEntity alloc] initWithJID:sender newMessage:1];
+            [_listConversation addObject:person];
+            [_tableView reloadData];
+        }
+    } else if ([topController isKindOfClass:[ConversationController class]]) {
+        [_listRecvMessage addObject:message];
+        BOOL exist=NO;
+        for (int i=0;i<_listConversation.count;i++) {
+            PersonEntity *person=_listConversation[i];
+            if ([person.JID isEqualToString:sender]) {
+                exist=YES;
+                person.numberOfMessage++;
+                [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                break;
+            }
+        }
+        if (!exist) {
+            PersonEntity *person=[[PersonEntity alloc] initWithJID:sender newMessage:1];
+            [_listConversation addObject:person];
+            [_tableView reloadData];
+        }
     }
 }
 @end

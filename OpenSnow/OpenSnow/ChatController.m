@@ -37,9 +37,11 @@
     self.dataSource = self;
     //    [[JSBubbleView appearance] setFont:/* your font for the message bubbles */];
     
-    self.title = [NSString stringWithFormat:@"Chat with %@",_chatWithJID ];
+    self.title = [NSString stringWithFormat:@"Chat with %@",_chatWithJID.JID ];
     
     self.messageInputView.textView.placeHolder = @"Your placeholder text";
+    OpenSnowXMPPParser *parser=[OpenSnowXMPPParser sharedInstance];
+    parser.detailDelagate=self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +56,7 @@
 #pragma mark - JSMessagesViewDataSource
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath {
     OSXMPPMessage *mess=_listMessage[indexPath.row];
-    return mess.body;
+    return mess.message.body;
     //return @"Demo chat, chat demo. Demo\n Demo";
 }
 - (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,7 +83,28 @@
     return mess.messageType;
 }
 - (void)didSendText:(NSString *)text {
-    
+    OpenSnowXMPPParser *parser=[OpenSnowXMPPParser sharedInstance];
+    if ([parser.xmppStream isConnected]) {
+        NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
+        [body setStringValue:text];
+        
+        NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+        [message addAttributeWithName:@"type" stringValue:@"chat"];
+        [message addAttributeWithName:@"to" stringValue:[NSString stringWithFormat:@"%@@hieu-pc",_chatWithJID.JID]];
+        [message addChild:body];
+        [parser.xmppStream sendElement:message];
+        
+        XMPPMessage *xmppMessage=[XMPPMessage messageFromElement:message];
+        OSXMPPMessage *myMess=[[OSXMPPMessage alloc] initWithXMPPMessage:xmppMessage messageType:JSBubbleMessageTypeOutgoing];
+        [_listMessage addObject:myMess];
+        
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_listMessage.count-1 inSection:0]]  withRowAnimation:UITableViewRowAnimationTop];
+        [self.tableView endUpdates];
+        [self scrollToBottomAnimated:YES];
+        
+    }
+   
 }
 - (UIImageView *)bubbleImageViewWithType:(JSBubbleMessageType)type
                        forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -132,5 +155,13 @@
  */
 - (JSMessageInputViewStyle)inputViewStyle {
     return JSMessageInputViewStyleFlat;
+}
+#pragma mark - ConservationDetailDelegate
+- (void)didReceiveMessage:(OSXMPPMessage *)message {
+    [_listMessage addObject:message];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_listMessage.count-1 inSection:0]]  withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView endUpdates];
+    [self scrollToBottomAnimated:YES];
 }
 @end

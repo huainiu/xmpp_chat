@@ -8,7 +8,9 @@
 
 #import "XMPPMessage.h"
 #import "JSBubbleImageViewFactory.h"
-@interface OSXMPPMessage : XMPPMessage
+@interface OSXMPPMessage : NSObject
+@property (nonatomic, strong) XMPPMessage *message;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic) JSBubbleMessageType messageType;
+-(id) initWithXMPPMessage:(XMPPMessage*)message messageType:(JSBubbleMessageType)messageType;
 @end

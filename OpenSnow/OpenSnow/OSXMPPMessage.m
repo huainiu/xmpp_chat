@@ -9,4 +9,13 @@
 #import "OSXMPPMessage.h"
 
 @implementation OSXMPPMessage
+-(id) initWithXMPPMessage:(XMPPMessage*)message messageType:(JSBubbleMessageType)messageType {
+    self = [super init];
+    if (self) {
+        _message=message;
+        _date=[NSDate date];
+        _messageType=messageType;
+    }
+    return self;
+}
 @end

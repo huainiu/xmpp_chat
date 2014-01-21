@@ -11,7 +11,9 @@
 #import "JSBubbleImageViewFactory.h"
 #import "PersonEntity.h"
 #import "OSXMPPMessage.h"
-@interface ChatController : JSMessagesViewController <JSMessagesViewDataSource,JSMessagesViewDelegate>
+#import "ConservationDetailDelegate.h"
+#import "OpenSnowXMPPParser.h"
+@interface ChatController : JSMessagesViewController <JSMessagesViewDataSource,JSMessagesViewDelegate,ConservationDetailDelegate>
 @property (nonatomic,strong) PersonEntity *chatWithJID;
 @property (nonatomic, strong) NSMutableArray *listMessage;
 -(id)initWithPerson:(PersonEntity *)JID message:(NSMutableArray*)listMessage;
