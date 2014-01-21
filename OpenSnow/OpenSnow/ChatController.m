@@ -22,10 +22,11 @@
     }
     return self;
 }
--(id)initWithJID:(NSString*)JID {
+-(id)initWithPerson:(PersonEntity *)JID message:(NSMutableArray*)listMessage{
     self=[super init];
     if (self) {
         _chatWithJID=JID;
+        _listMessage=[NSMutableArray arrayWithArray:listMessage];
     }
     return self;
 }
@@ -48,14 +49,17 @@
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return _listMessage.count;
 }
 #pragma mark - JSMessagesViewDataSource
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return @"Demo chat, chat demo. Demo\n Demo";
+    OSXMPPMessage *mess=_listMessage[indexPath.row];
+    return mess.body;
+    //return @"Demo chat, chat demo. Demo\n Demo";
 }
 - (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [NSDate date];
+    OSXMPPMessage *mess=_listMessage[indexPath.row];
+    return mess.date;
 }
 - (UIImageView *)avatarImageViewForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
@@ -73,18 +77,16 @@
 }
 #pragma mark - JSMessagesViewDelegate
 - (JSBubbleMessageType)messageTypeForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row%2==0 ) {
-        return JSBubbleMessageTypeIncoming;
-    } else {
-        return JSBubbleMessageTypeOutgoing;
-    }
+    OSXMPPMessage *mess=_listMessage[indexPath.row];
+    return mess.messageType;
 }
 - (void)didSendText:(NSString *)text {
     
 }
 - (UIImageView *)bubbleImageViewWithType:(JSBubbleMessageType)type
                        forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row%2==0) {
+    OSXMPPMessage *mess=_listMessage[indexPath.row];
+    if (mess.messageType==JSBubbleMessageTypeIncoming) {
         return [JSBubbleImageViewFactory classicBubbleImageViewForType:JSBubbleMessageTypeIncoming style:JSBubbleImageViewStyleClassicSquareGray];
     } else {
         return [JSBubbleImageViewFactory classicBubbleImageViewForType:JSBubbleMessageTypeOutgoing style:JSBubbleImageViewStyleClassicSquareBlue];
@@ -99,7 +101,7 @@
  *  @see JSMessagesViewTimestampPolicy.
  */
 - (JSMessagesViewTimestampPolicy)timestampPolicy {
-    return JSMessagesViewTimestampPolicyAlternating;
+    return JSMessagesViewTimestampPolicyAll;
 }
 
 /**

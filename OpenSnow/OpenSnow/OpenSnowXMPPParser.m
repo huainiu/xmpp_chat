@@ -378,9 +378,13 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message {
 	DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
 	// A simple example of inbound message handling.
+    OSXMPPMessage *osMessage=(OSXMPPMessage*)message;
+    osMessage.date=[NSDate date];
+    osMessage.messageType=JSBubbleMessageTypeIncoming;
+    
 	if ([message isChatMessageWithBody]){
 		if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
-            [_listDelagate didReceiveMessage:message];
+            [_listDelagate didReceiveMessage:osMessage];
 		} else {
             NSString *body = [[message elementForName:@"body"] stringValue];
 			// We are not active, so use a local notification instead

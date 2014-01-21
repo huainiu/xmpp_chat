@@ -210,6 +210,7 @@
 		D4300E89188E2C8B0097BB1E /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300E88188E2C8B0097BB1E /* ChatController.m */; };
 		D4300E8F188E50080097BB1E /* OpenSnowXMPPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300E8E188E50080097BB1E /* OpenSnowXMPPParser.m */; };
 		D4300E96188E5C960097BB1E /* PersonEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300E95188E5C960097BB1E /* PersonEntity.m */; };
+		D4300E99188E62600097BB1E /* OSXMPPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D4300E98188E62600097BB1E /* OSXMPPMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -583,6 +584,8 @@
 		D4300E93188E58890097BB1E /* ListConservationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListConservationDelegate.h; sourceTree = "<group>"; };
 		D4300E94188E5C960097BB1E /* PersonEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonEntity.h; sourceTree = "<group>"; };
 		D4300E95188E5C960097BB1E /* PersonEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonEntity.m; sourceTree = "<group>"; };
+		D4300E97188E62600097BB1E /* OSXMPPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSXMPPMessage.h; sourceTree = "<group>"; };
+		D4300E98188E62600097BB1E /* OSXMPPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSXMPPMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -672,6 +675,8 @@
 				D4300E93188E58890097BB1E /* ListConservationDelegate.h */,
 				D4300E94188E5C960097BB1E /* PersonEntity.h */,
 				D4300E95188E5C960097BB1E /* PersonEntity.m */,
+				D4300E97188E62600097BB1E /* OSXMPPMessage.h */,
+				D4300E98188E62600097BB1E /* OSXMPPMessage.m */,
 			);
 			path = OpenSnow;
 			sourceTree = "<group>";
@@ -1820,6 +1825,7 @@
 				D4300D8E188E1DCF0097BB1E /* XMPPPrivacy.m in Sources */,
 				D4300C05188E1D610097BB1E /* AppDelegate.m in Sources */,
 				D4300D99188E1DCF0097BB1E /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
+				D4300E99188E62600097BB1E /* OSXMPPMessage.m in Sources */,
 				D4300DAD188E1DCF0097BB1E /* XMPPPubSub.m in Sources */,
 				D4300E55188E2C060097BB1E /* JSDismissiveTextView.m in Sources */,
 				D4300DE2188E1DCF0097BB1E /* DDXMLElement.m in Sources */,

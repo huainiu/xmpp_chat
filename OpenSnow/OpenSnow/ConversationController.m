@@ -31,7 +31,7 @@
     _listRecvMessage=[NSMutableArray array];
     
     //
-    PersonEntity *person=[[PersonEntity alloc] initWithJID:@"hieutt16" newMessage:0];
+    //PersonEntity *person=[[PersonEntity alloc] initWithJID:@"hieutt16" newMessage:0];
     //[_listConversation addObject:person];
     //add conversation bar button
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addConversation)];
@@ -85,12 +85,25 @@
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *JID=_listConversation[indexPath.row];
-    ChatController *chat=[[ChatController alloc] initWithJID:JID];
+    PersonEntity *person=_listConversation[indexPath.row];
+    //refresh tableview data
+    person.numberOfMessage=0;
+    [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    //push chat controller
+    NSMutableArray *discardedItems = [NSMutableArray array];
+
+    
+    for (OSXMPPMessage *item in _listRecvMessage) {
+        if ([person.JID isEqualToString:item.from.user])
+         [discardedItems addObject:item];
+    }
+    
+    [_listRecvMessage removeObjectsInArray:discardedItems];
+    ChatController *chat=[[ChatController alloc] initWithPerson:person message:discardedItems];
     [self.navigationController pushViewController:chat animated:YES];
 }
 #pragma mark - ListConservationDelegate
-- (void)didReceiveMessage:(XMPPMessage *)message {
+- (void)didReceiveMessage:(OSXMPPMessage *)message {
     [_listRecvMessage addObject:message];
     NSString *sender=message.from.user;
     BOOL exist=NO;

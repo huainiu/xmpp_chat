@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XMPPMessage.h"
+#import "OSXMPPMessage.h"
 @protocol ListConservationDelegate <NSObject>
-- (void)didReceiveMessage:(XMPPMessage *)message;
+- (void)didReceiveMessage:(OSXMPPMessage *)message;
 @end

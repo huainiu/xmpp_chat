@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "JSMessagesViewController.h"
 #import "JSBubbleImageViewFactory.h"
-
+#import "PersonEntity.h"
+#import "OSXMPPMessage.h"
 @interface ChatController : JSMessagesViewController <JSMessagesViewDataSource,JSMessagesViewDelegate>
-@property (nonatomic,strong) NSString *chatWithJID;
--(id)initWithJID:(NSString*)JID;
+@property (nonatomic,strong) PersonEntity *chatWithJID;
+@property (nonatomic, strong) NSMutableArray *listMessage;
+-(id)initWithPerson:(PersonEntity *)JID message:(NSMutableArray*)listMessage;
 @end
