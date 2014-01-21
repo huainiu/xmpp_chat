@@ -28,12 +28,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _listConversation=[NSMutableArray array];
+    [_listConversation addObject:@"hieutt16"];
+    //add conversation bar button
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addConversation)];
+    self.navigationItem.rightBarButtonItem = addItem;
+    //
+    self.title=@"User: haitt22";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+#pragma mark - Bar button
+-(void)addConversation {
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"" message:@"Nhập nick" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    alert.alertViewStyle=UIAlertViewStylePlainTextInput;
+    [alert showWithHandler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex==1) {
+            NSString *inputText=[alertView textFieldAtIndex:0].text;
+            [_listConversation addObject:inputText];
+            [_tableView reloadData];
+        }
+    }];
+    
 }
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -47,8 +66,14 @@
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text=@"Test cell";
+    cell.textLabel.text=_listConversation[indexPath.row];
+    cell.detailTextLabel.text=@"0 new message";
     return cell;
 }
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *JID=_listConversation[indexPath.row];
+    ChatController *chat=[[ChatController alloc] initWithJID:JID];
+    [self.navigationController pushViewController:chat animated:YES];
+}
 @end
