@@ -1,5 +1,5 @@
 //
-//  XMPPParser.h
+//  ListConservationDelegate.h
 //  OpenSnow
 //
 //  Created by KCQ_HIEUTT16 on 1/21/14.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface XMPPParser : NSObject
-
+#import "XMPPMessage.h"
+@protocol ListConservationDelegate <NSObject>
+- (void)didReceiveMessage:(XMPPMessage *)message;
 @end

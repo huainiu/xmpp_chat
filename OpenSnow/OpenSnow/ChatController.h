@@ -10,8 +10,6 @@
 #import "JSMessagesViewController.h"
 #import "JSBubbleImageViewFactory.h"
 
-//XMPP
-#import "XMPPMessage.h"
 @interface ChatController : JSMessagesViewController <JSMessagesViewDataSource,JSMessagesViewDelegate>
 @property (nonatomic,strong) NSString *chatWithJID;
 -(id)initWithJID:(NSString*)JID;

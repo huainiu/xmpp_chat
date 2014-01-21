@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "UIAlertView+Blocks.h"
 #import "ChatController.h"
-@interface ConversationController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+#import "PersonEntity.h"
+#import "ListConservationDelegate.h"
+#import "OpenSnowXMPPParser.h"
+@interface ConversationController : UIViewController <UITableViewDataSource,UITableViewDelegate,ListConservationDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *listConversation;
+@property (nonatomic, strong) NSMutableArray *listRecvMessage;
 @end

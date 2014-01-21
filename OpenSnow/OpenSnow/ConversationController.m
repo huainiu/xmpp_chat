@@ -7,7 +7,7 @@
 //
 
 #import "ConversationController.h"
-
+#import "XMPPMessage.h"
 @interface ConversationController ()
 
 @end
@@ -28,12 +28,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _listConversation=[NSMutableArray array];
-    [_listConversation addObject:@"hieutt16"];
+    _listRecvMessage=[NSMutableArray array];
+    
+    //
+    PersonEntity *person=[[PersonEntity alloc] initWithJID:@"hieutt16" newMessage:0];
+    //[_listConversation addObject:person];
     //add conversation bar button
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addConversation)];
     self.navigationItem.rightBarButtonItem = addItem;
     //
     self.title=@"User: haitt22";
+    //delegate
+    OpenSnowXMPPParser *parser=[OpenSnowXMPPParser sharedInstance];
+    parser.listDelagate=self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,9 +72,15 @@
     cell=[tableView dequeueReusableCellWithIdentifier: CellIdentifier];
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.detailTextLabel.textColor=[UIColor blueColor];
     }
-    cell.textLabel.text=_listConversation[indexPath.row];
-    cell.detailTextLabel.text=@"0 new message";
+    PersonEntity *person=_listConversation[indexPath.row];
+    cell.textLabel.text=person.JID;
+    if (person.numberOfMessage==0) {
+        cell.detailTextLabel.text=@"";
+    } else {
+        cell.detailTextLabel.text=[NSString stringWithFormat:@"%d new message",person.numberOfMessage ];
+    }
     return cell;
 }
 #pragma mark - UITableViewDelegate
@@ -75,5 +88,25 @@
     NSString *JID=_listConversation[indexPath.row];
     ChatController *chat=[[ChatController alloc] initWithJID:JID];
     [self.navigationController pushViewController:chat animated:YES];
+}
+#pragma mark - ListConservationDelegate
+- (void)didReceiveMessage:(XMPPMessage *)message {
+    [_listRecvMessage addObject:message];
+    NSString *sender=message.from.user;
+    BOOL exist=NO;
+    for (int i=0;i<_listConversation.count;i++) {
+        PersonEntity *person=_listConversation[i];
+        if ([person.JID isEqualToString:sender]) {
+            exist=YES;
+            person.numberOfMessage++;
+            [_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        }
+    }
+    if (!exist) {
+        PersonEntity *person=[[PersonEntity alloc] initWithJID:sender newMessage:1];
+        [_listConversation addObject:person];
+        [_tableView reloadData];
+    }
 }
 @end
