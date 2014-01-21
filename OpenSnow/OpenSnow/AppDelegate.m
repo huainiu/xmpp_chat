@@ -14,6 +14,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    ConversationController *conversation=[[ConversationController alloc] initWithNibName:@"ConversationController" bundle:nil];
+    UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:conversation];
+    self.window.rootViewController=nav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
